@@ -15,3 +15,6 @@
  .reader-page .reader-slide.spread .manga-page{height:100%;max-height:100%;min-height:0}
  .reader-page .reader-slide.spread .manga-page img{height:100%;max-height:100%;object-fit:contain}
 }
+
+/* Related works in the information tab */
+.related-works{margin-top:30px}.related-works h2{font-size:20px;margin:0 0 12px}.related-work{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid #e5e5e5;text-decoration:none;color:inherit}.related-work img{width:96px;height:120px;object-fit:contain;background:#f5f5f5;flex-shrink:0}.related-work span{display:flex;flex-direction:column;gap:8px}.related-work strong{font-size:18px}.related-work small{color:#666}.related-work em{font-style:normal;color:#159bdf;font-weight:700}@media(max-width:380px){.related-work img{width:80px;height:105px}}
