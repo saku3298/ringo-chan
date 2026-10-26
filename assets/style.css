@@ -18,3 +18,15 @@
 
 /* Related works in the information tab */
 .related-works{margin-top:30px}.related-works h2{font-size:20px;margin:0 0 12px}.related-work{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid #e5e5e5;text-decoration:none;color:inherit}.related-work img{width:96px;height:120px;object-fit:contain;background:#f5f5f5;flex-shrink:0}.related-work span{display:flex;flex-direction:column;gap:8px}.related-work strong{font-size:18px}.related-work small{color:#666}.related-work em{font-style:normal;color:#159bdf;font-weight:700}@media(max-width:380px){.related-work img{width:80px;height:105px}}
+
+/* Related works: match Rikarikai cards */
+.related-works.info-section{margin-top:30px;padding:0}.related-works.info-section h2{font-size:28px;margin:0 0 18px}.author-work-card{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;align-items:center;padding:16px 0;border-top:1px solid #eee;text-decoration:none;color:inherit}.author-work-card img{width:130px;height:170px;object-fit:cover;background:#eee}.author-work-title{font-size:22px;font-weight:900}.author-work-author{color:#777;margin-top:6px;font-size:16px}.author-work-label{display:inline-block;background:#111;color:#fff;padding:4px 9px;margin-top:8px;font-weight:800}.author-work-card:hover .author-work-title{text-decoration:underline}@media(max-width:600px){.author-work-card{grid-template-columns:100px minmax(0,1fr)}.author-work-card img{width:100px;height:135px}.author-work-title{font-size:19px}.author-work-author{font-size:14px}}
+
+/* Episode list: compact layout consistent with Ogre Kingdom */
+.episode-list{padding:12px 18px 20px}
+.episode-row{display:grid;grid-template-columns:170px minmax(0,1fr) auto;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #e5e5e5;color:#111;text-decoration:none;min-height:128px}
+.episode-row img{width:170px;height:90px;object-fit:contain;object-position:center;background:#fff}
+.episode-row strong{font-size:18px;font-weight:800;line-height:1.5}
+.episode-read{display:inline-flex;align-items:center;justify-content:center;border:2px solid #12a4f4;color:#0797df;background:white;border-radius:999px;font-weight:800;padding:9px 14px;white-space:nowrap}
+.episode-row:hover strong{text-decoration:underline}
+@media(max-width:540px){.episode-list{padding:8px 14px}.episode-row{grid-template-columns:100px minmax(0,1fr) auto;gap:10px;min-height:95px}.episode-row img{width:100px;height:70px}.episode-row strong{font-size:14px}.episode-read{font-size:13px;padding:7px 10px}}
