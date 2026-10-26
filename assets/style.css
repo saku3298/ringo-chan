@@ -4,3 +4,14 @@
 @media(orientation:landscape){.viewer{height:calc(100dvh - 42px);min-height:320px}.reader-slide{height:100%;align-items:flex-start}.reader-slide.spread .manga-page{height:100%;max-width:50vw}.reader-slide.spread .manga-page img{height:100%;width:auto;max-width:50vw;object-fit:contain}}
 
 .reader-page a{color:#fff;text-decoration:none}.reader-page .viewer img{display:block}.reader-page .reader-slide.single .manga-page img{max-width:100%;object-fit:contain}
+
+/* Landscape: keep artwork below the navigation bar and inside visible viewport. */
+.reader-page{margin:0}
+.reader-page .reader-bar{box-sizing:border-box}
+@media(orientation:landscape){
+ .reader-page .reader-bar{position:relative;top:auto;flex:none}
+ .reader-page .viewer{height:var(--ringo-viewer-height,calc(100dvh - 42px))!important;min-height:0!important;max-height:var(--ringo-viewer-height,calc(100dvh - 42px));overflow:hidden}
+ .reader-page .reader-slide{top:0;height:100%;overflow:hidden}
+ .reader-page .reader-slide.spread .manga-page{height:100%;max-height:100%;min-height:0}
+ .reader-page .reader-slide.spread .manga-page img{height:100%;max-height:100%;object-fit:contain}
+}
