@@ -41,23 +41,43 @@
 .episode-summary .sort-btn,.volume-summary .sort-btn{appearance:none;border:0;background:none;padding:4px 0;color:#888;font:inherit;font-weight:800;cursor:pointer}
 .episode-summary .sort-btn.active,.volume-summary .sort-btn.active{color:#ef3b35}
 
-/* 2026-10-27: Keep both halves of a landscape spread flush at the gutter.
-   Each half owns 50% of the viewer; artwork aligns toward the center. */
-@media (orientation:landscape) {
+/* Landscape spread: match the working Ogre Kingdom viewer.
+   Do not reserve fixed 50% columns: keep pages touching at the gutter. */
+@media (orientation: landscape) {
   .reader-page .reader-slide.spread {
-    display:flex; flex-direction:row-reverse; justify-content:center; gap:0;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0 !important;
   }
   .reader-page .reader-slide.spread .manga-page {
-    flex:0 0 50%; width:50%; max-width:50%; min-width:0;
-    display:flex; align-items:flex-start; margin:0; padding:0;
+    flex: 0 1 auto !important;
+    width: auto !important;
+    max-width: 50vw !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  .reader-page .reader-slide.spread .manga-page:first-child { justify-content:flex-start; }
-  .reader-page .reader-slide.spread .manga-page:nth-child(2) { justify-content:flex-end; }
   .reader-page .reader-slide.spread .manga-page img {
-    display:block; width:auto; height:auto; max-width:100%; max-height:100%;
-    object-fit:contain; margin:0; padding:0; flex:none;
+    display: block;
+    width: auto !important;
+    height: 100% !important;
+    max-width: 50vw !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: none !important;
   }
   .reader-page .reader-slide.spread .manga-page.blank-page {
-    flex:0 0 50%; width:50%; max-width:50%; aspect-ratio:auto;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: 50vw !important;
+    height: 100% !important;
+    aspect-ratio: 884 / 1254;
   }
 }
