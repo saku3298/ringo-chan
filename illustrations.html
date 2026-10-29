@@ -28,6 +28,24 @@ footer button:disabled{opacity:.35;cursor:default}
  #spread.pair .sheet{width:100%}
  #spread .sheet img{max-height:calc(100dvh - 145px)}
 }
+
+/* スマホ縦向きは1ページを画面幅いっぱいに表示する */
+@media (orientation:portrait) and (max-width:650px){
+ main{padding:0;min-height:calc(100dvh - 114px)}
+ #spread,#spread.pair,#spread.single{width:100%;max-width:100%;margin:0}
+ #spread.pair .sheet,#spread.single .sheet{width:100%;flex:0 0 100%}
+ #spread .sheet img,#spread.pair .sheet img{width:100%;height:auto;max-width:100%;max-height:calc(100dvh - 114px);object-fit:contain}
+}
+/* 横向きではブラウザの実際の表示領域を最大限使用する */
+@media (orientation:landscape){
+ header{position:fixed;top:0;left:0;right:0;z-index:3;min-height:44px;padding:6px 12px;background:rgba(34,34,34,.88)}
+ footer{position:fixed;bottom:0;left:0;right:0;z-index:3;min-height:46px;padding:4px 10px;background:rgba(34,34,34,.88)}
+ footer button{padding:5px 12px}
+ main{height:100dvh;min-height:0;padding:48px 0 50px}
+ #spread.pair{width:min(100vw, calc((100dvh - 98px) * 1.42));max-width:100vw}
+ #spread.single{width:100%;height:100%}
+ #spread.single .sheet img{max-height:calc(100dvh - 98px)}
+}
 </style>
 </head>
 <body>

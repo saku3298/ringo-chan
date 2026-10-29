@@ -1,6 +1,1 @@
-りんごちゃん スマホ横向き見開き表示 修正
-
-GitHubの assets/style.css をZIP内の同名ファイルで上書きしてください。
-変更対象: 横向き見開きCSSの最終ブロックのみ。
-reader.html / assets/reader.js / 漫画画像は変更しません。
-アップロード後、スマホ横向きで左右ページの密着・スワイプを確認してください。
+スマホ表示拡大修正。illustrations.htmlのみ上書きしてください。画像・巻・話・index.htmlは変更しません。
