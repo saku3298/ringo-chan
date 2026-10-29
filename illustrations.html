@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>りんごちゃん｜イラスト集</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#161616;color:#fff;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif}
+header{display:flex;align-items:center;gap:16px;padding:12px 18px;background:#222;min-height:55px}
+header a{color:white;text-decoration:none;font-size:14px}
+header strong{font-size:16px}
+main{min-height:calc(100dvh - 114px);display:flex;align-items:center;justify-content:center;padding:12px 10px}
+#spread{width:100%;display:flex;align-items:center;justify-content:center;gap:0;touch-action:pan-y pinch-zoom;user-select:none}
+.sheet{display:flex;align-items:center;justify-content:center;min-width:0}
+.sheet img{display:block;max-width:100%;max-height:calc(100dvh - 145px);width:auto;height:auto;object-fit:contain;-webkit-user-drag:none}
+#spread.pair .sheet{width:50%}
+#spread.pair .sheet img{max-width:100%;max-height:calc(100dvh - 145px)}
+#spread.single .sheet{width:100%}
+footer{display:flex;align-items:center;justify-content:center;gap:22px;padding:9px 12px;background:#222;min-height:59px}
+footer button{background:#383838;border:1px solid #666;border-radius:7px;color:#fff;padding:9px 16px;font-size:14px;cursor:pointer}
+footer button:disabled{opacity:.35;cursor:default}
+#counter{font-size:13px;min-width:100px;text-align:center}
+@media (max-width:650px) and (orientation:portrait){
+ main{min-height:calc(100dvh - 114px)}
+ #spread.pair .sheet{width:100%}
+ #spread .sheet img{max-height:calc(100dvh - 145px)}
+}
+</style>
+</head>
+<body>
+<header><a href="index.html#about">‹ 作品情報に戻る</a><strong>りんごちゃん イラスト集</strong></header>
+<main><div id="spread" aria-live="polite"></div></main>
+<footer><button id="prev" type="button">前へ</button><span id="counter"></span><button id="next" type="button">次へ</button></footer>
+<script>
+"use strict";
+// 指定された組み合わせを固定。右開き: 各ペアの先頭ページが右、次が左。
+const groups=[[1],[2,3],[4,5],[6,7],[8,9],[10,11],[12,13],[14,15],[16,17],[18,19],[20,21],[22,23],[24],[25,26]];
+let index=0, portraitPage=0;
+const spread=document.getElementById('spread');
+const counter=document.getElementById('counter');
+const isPortrait=()=>matchMedia('(max-width:650px) and (orientation:portrait)').matches;
+function render(){
+ const pages=groups[index], portrait=isPortrait();
+ const selected=portrait?[pages[portraitPage]]:pages;
+ spread.replaceChildren();
+ spread.className=selected.length===2?'pair':'single';
+ // ペアは左から2番目、1番目の順に配置（右開き）
+ const visualOrder=selected.length===2?[selected[1],selected[0]]:selected;
+ for(const n of visualOrder){
+   const sheet=document.createElement('div');sheet.className='sheet';
+   const img=document.createElement('img');
+   img.src='images/illustrations/illustration-'+String(n).padStart(3,'0')+'.jpg';
+   img.alt='イラスト集 '+n+'ページ';img.draggable=false;
+   sheet.append(img);spread.append(sheet);
+ }
+ const shown=selected.join('・');
+ counter.textContent=shown+' / 26ページ';
+ document.getElementById('prev').disabled=index===0&&(!portrait||portraitPage===0);
+ document.getElementById('next').disabled=index===groups.length-1&&(!portrait||portraitPage===groups[index].length-1);
+}
+function go(direction){
+ if(isPortrait()){
+   let next=portraitPage+direction;
+   if(next>=0&&next<groups[index].length){portraitPage=next;render();return}
+ }
+ const target=index+direction;
+ if(target<0||target>=groups.length)return;
+ index=target;
+ portraitPage=isPortrait()&&direction<0?groups[index].length-1:0;
+ render();
+}
+document.getElementById('prev').onclick=()=>go(-1);
+document.getElementById('next').onclick=()=>go(1);
+document.addEventListener('keydown',e=>{
+ if(e.key==='ArrowLeft')go(1);
+ if(e.key==='ArrowRight')go(-1);
+});
+let start=null;
+spread.addEventListener('touchstart',e=>{
+ if(e.touches.length!==1){start=null;return}
+ start={x:e.touches[0].clientX,y:e.touches[0].clientY};
+},{passive:true});
+spread.addEventListener('touchend',e=>{
+ if(!start||e.changedTouches.length!==1)return;
+ const dx=e.changedTouches[0].clientX-start.x,dy=e.changedTouches[0].clientY-start.y;
+ start=null;
+ if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.4)go(dx>0?1:-1);
+},{passive:true});
+addEventListener('resize',()=>{portraitPage=0;render()});
+render();
+</script>
+</body></html>
