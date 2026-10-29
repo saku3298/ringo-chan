@@ -1,1 +1,1 @@
-スマホ表示拡大修正。illustrations.htmlのみ上書きしてください。画像・巻・話・index.htmlは変更しません。
+イラスト集の「次へ」を左、「前へ」を右に変更。前回のスマホ表示拡大修正を維持。GitHubでillustrations.htmlのみ上書きしてください。
