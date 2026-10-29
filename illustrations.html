@@ -14,8 +14,10 @@ main{min-height:calc(100dvh - 114px);display:flex;align-items:center;justify-con
 #spread{width:100%;display:flex;align-items:center;justify-content:center;gap:0;touch-action:pan-y pinch-zoom;user-select:none}
 .sheet{display:flex;align-items:center;justify-content:center;min-width:0}
 .sheet img{display:block;max-width:100%;max-height:calc(100dvh - 145px);width:auto;height:auto;object-fit:contain;-webkit-user-drag:none}
-#spread.pair .sheet{width:50%}
-#spread.pair .sheet img{max-width:100%;max-height:calc(100dvh - 145px)}
+/* 見開き全体をページの縦横比に合わせて中央に配置し、左右の内側を密着 */
+#spread.pair{width:min(100%, calc((100dvh - 145px) * 1.42));margin-inline:auto}
+#spread.pair .sheet{width:50%;flex:0 0 50%;justify-content:stretch}
+#spread.pair .sheet img{display:block;width:100%;height:auto;max-width:none;max-height:none;object-fit:fill}
 #spread.single .sheet{width:100%}
 footer{display:flex;align-items:center;justify-content:center;gap:22px;padding:9px 12px;background:#222;min-height:59px}
 footer button{background:#383838;border:1px solid #666;border-radius:7px;color:#fff;padding:9px 16px;font-size:14px;cursor:pointer}
