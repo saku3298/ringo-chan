@@ -152,3 +152,7 @@ body{-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 .illustration-gallery-link span{font-weight:800;color:var(--red)}
 .jp-hero-right{background:radial-gradient(circle at 88% 18%,rgba(239,59,53,.38),transparent 55%),linear-gradient(135deg,#16161a 0%,#241619 58%,#4b1719 100%)}
 .reader-title #reader-title{margin-left:6px;font-size:12px;color:#aaa;white-space:nowrap}
+/* ヒーローの左右比率を固定（右のタイトルの長さで左が縮まないように） */
+.jp-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.jp-hero-right{min-width:0}
+@media(max-width:600px){.jp-hero{grid-template-columns:minmax(0,46.5%) minmax(0,53.5%)}}
