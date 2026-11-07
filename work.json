@@ -1,0 +1,782 @@
+{
+ "site": {
+  "name": "りんごちゃん",
+  "url": "https://saku3298.github.io/ringo-chan/",
+  "description": "れ。によるオリジナル漫画『りんごちゃん』（休載中・全82話）",
+  "copyright": "© れ。 / りんごちゃん"
+ },
+ "work": {
+  "title": "りんごちゃん",
+  "author": "れ。",
+  "status": "休載中・未完結",
+  "ogp_label": "全82話・休載中"
+ },
+ "episodes": [
+  {
+   "no": 1,
+   "title": "りんごちゃん1世"
+  },
+  {
+   "no": 2,
+   "title": "生きろ！！"
+  },
+  {
+   "no": 3,
+   "title": "てきが来た"
+  },
+  {
+   "no": 4,
+   "title": "戦地"
+  },
+  {
+   "no": 5,
+   "title": "にがす"
+  },
+  {
+   "no": 6,
+   "title": "動け！にげろ！"
+  },
+  {
+   "no": 7,
+   "title": "誇り"
+  },
+  {
+   "no": 8,
+   "title": "ついせき"
+  },
+  {
+   "no": 9,
+   "title": "精神とケンカ"
+  },
+  {
+   "no": 10,
+   "title": "かじゅうバズーカ"
+  },
+  {
+   "no": 11,
+   "title": "地球に！！"
+  },
+  {
+   "no": 12,
+   "title": "キャロットうめぇッ！！"
+  },
+  {
+   "no": 13,
+   "title": "死闘の結末"
+  },
+  {
+   "no": 14,
+   "title": "おってめぐって"
+  },
+  {
+   "no": 15,
+   "title": "パーフェクトお皿"
+  },
+  {
+   "no": 16,
+   "title": "肉星危うし！！"
+  },
+  {
+   "no": 17,
+   "title": "焼きソーセージ"
+  },
+  {
+   "no": 18,
+   "title": "バーカバーガ"
+  },
+  {
+   "no": 19,
+   "title": "バナ～ナ"
+  },
+  {
+   "no": 20,
+   "title": "ヤバイ！！"
+  },
+  {
+   "no": 21,
+   "title": "にげた！！ハンバーカ！！"
+  },
+  {
+   "no": 22,
+   "title": "のらりくらり"
+  },
+  {
+   "no": 23,
+   "title": "へけぇ！！"
+  },
+  {
+   "no": 24,
+   "title": "帰ろう！！"
+  },
+  {
+   "no": 25,
+   "title": "豆月へ行こう！！"
+  },
+  {
+   "no": 26,
+   "title": "豆の悪意"
+  },
+  {
+   "no": 27,
+   "title": "ザワザワ"
+  },
+  {
+   "no": 28,
+   "title": "やってきた！！"
+  },
+  {
+   "no": 29,
+   "title": "黄金のりんご"
+  },
+  {
+   "no": 30,
+   "title": "毒りんご様"
+  },
+  {
+   "no": 31,
+   "title": "毒りんごをぶったおそう！"
+  },
+  {
+   "no": 32,
+   "title": "大乱闘"
+  },
+  {
+   "no": 33,
+   "title": "りんご激突りんご"
+  },
+  {
+   "no": 34,
+   "title": "破壊衝動"
+  },
+  {
+   "no": 35,
+   "title": "黒りんご"
+  },
+  {
+   "no": 36,
+   "title": "超死闘"
+  },
+  {
+   "no": 37,
+   "title": "黒りんごちゃん"
+  },
+  {
+   "no": 38,
+   "title": "超死闘②"
+  },
+  {
+   "no": 39,
+   "title": "超死闘③"
+  },
+  {
+   "no": 40,
+   "title": "限界バトル"
+  },
+  {
+   "no": 41,
+   "title": "決着の気持ち"
+  },
+  {
+   "no": 42,
+   "title": "みんなは？"
+  },
+  {
+   "no": 43,
+   "title": "宇宙の王"
+  },
+  {
+   "no": 44,
+   "title": "で？"
+  },
+  {
+   "no": 45,
+   "title": "海行こーぜ"
+  },
+  {
+   "no": 46,
+   "title": "何だ何だ"
+  },
+  {
+   "no": 47,
+   "title": "水のバケモノ"
+  },
+  {
+   "no": 48,
+   "title": "これは魔法の水？"
+  },
+  {
+   "no": 49,
+   "title": "すーいすい"
+  },
+  {
+   "no": 50,
+   "title": "デビルウォーター"
+  },
+  {
+   "no": 51,
+   "title": "おまつり"
+  },
+  {
+   "no": 52,
+   "title": "お前ツリー"
+  },
+  {
+   "no": 53,
+   "title": "ブリッコリーの神"
+  },
+  {
+   "no": 54,
+   "title": "もう毒りんご"
+  },
+  {
+   "no": 55,
+   "title": "りんごちゃんの首"
+  },
+  {
+   "no": 56,
+   "title": "いもいもほり大会"
+  },
+  {
+   "no": 57,
+   "title": "いもいもほり大会②"
+  },
+  {
+   "no": 58,
+   "title": "いもいもほり大会③"
+  },
+  {
+   "no": 59,
+   "title": "肉肉"
+  },
+  {
+   "no": 60,
+   "title": "ポポポポポー♪"
+  },
+  {
+   "no": 61,
+   "title": "1からガンバ！！"
+  },
+  {
+   "no": 62,
+   "title": "食べきれなーい"
+  },
+  {
+   "no": 63,
+   "title": "詰み"
+  },
+  {
+   "no": 64,
+   "title": "厄介なヤツ"
+  },
+  {
+   "no": 65,
+   "title": "妖力水圧マン"
+  },
+  {
+   "no": 66,
+   "title": "呪いのエリザベスソーメン"
+  },
+  {
+   "no": 67,
+   "title": "呪いのエリザベスソーメンの力"
+  },
+  {
+   "no": 68,
+   "title": "皿リー11"
+  },
+  {
+   "no": 69,
+   "title": "鬼謀危亡希望"
+  },
+  {
+   "no": 70,
+   "title": "打ち出の小槌"
+  },
+  {
+   "no": 71,
+   "title": "皿リー4949とりんごと巨人と"
+  },
+  {
+   "no": 72,
+   "title": "もう一人のりんごちゃん"
+  },
+  {
+   "no": 73,
+   "title": "りんごVSりんごVSりんご"
+  },
+  {
+   "no": 74,
+   "title": "りんごトルネード"
+  },
+  {
+   "no": 75,
+   "title": "光の球体"
+  },
+  {
+   "no": 76,
+   "title": "サン"
+  },
+  {
+   "no": 77,
+   "title": "ビスケットワンコ"
+  },
+  {
+   "no": 78,
+   "title": "ビスケットワンコの力"
+  },
+  {
+   "no": 79,
+   "title": "ヤベーヤツらに会いました。"
+  },
+  {
+   "no": 80,
+   "title": "ヤベーヤツらに会いました。②"
+  },
+  {
+   "no": 81,
+   "title": "未知"
+  },
+  {
+   "no": 82,
+   "title": "鬼ごっこ"
+  }
+ ],
+ "volumes": [
+  {
+   "no": 1,
+   "episodes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "layout": [
+    "volume01-001",
+    "volume01-002",
+    "volume01-toc01-001",
+    "volume01-toc01-002",
+    1,
+    2,
+    3,
+    4,
+    "volume01-toc02-001",
+    "volume01-toc02-002",
+    5,
+    6,
+    7,
+    8,
+    "volume01-toc03-001",
+    "volume01-toc03-002",
+    9,
+    10,
+    11,
+    12,
+    "volume01-end-001",
+    "volume01-end-002"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 2,
+   "episodes": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "layout": [
+    "volume02-001",
+    "volume02-002",
+    "volume02-toc01-001",
+    "volume02-toc01-002",
+    13,
+    14,
+    15,
+    16,
+    "volume02-toc02-001",
+    "volume02-toc02-002",
+    17,
+    18,
+    19,
+    20,
+    "volume02-toc03-001",
+    "volume02-toc03-002",
+    21,
+    22,
+    23,
+    24,
+    "volume02-end-001",
+    "volume02-end-002"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 3,
+   "episodes": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "layout": [
+    "volume03-001",
+    "volume03-002",
+    "volume03-toc01-001",
+    "volume03-toc01-002",
+    25,
+    26,
+    27,
+    28,
+    "volume03-toc02-001",
+    "volume03-toc02-002",
+    29,
+    30,
+    31,
+    32,
+    "volume03-toc03-001",
+    "volume03-toc03-002",
+    33,
+    34,
+    35,
+    36,
+    "volume03-end-001"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 4,
+   "episodes": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+   ],
+   "layout": [
+    "volume04-001",
+    "volume04-002",
+    "volume04-toc01-001",
+    "volume04-toc01-002",
+    37,
+    38,
+    39,
+    40,
+    "volume04-toc02-001",
+    "volume04-toc02-002",
+    41,
+    42,
+    43,
+    44,
+    "volume04-extra02-001",
+    "volume04-extra02-002",
+    "volume04-extra02-003",
+    "volume04-extra02-004",
+    "volume04-ending-001"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 5,
+   "episodes": [
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
+   ],
+   "layout": [
+    "volume05-001",
+    "volume05-002",
+    "volume05-003",
+    "volume05-004",
+    "volume05-005",
+    "volume05-006",
+    "volume05-007",
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    "volume05-ending-001"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 6,
+   "episodes": [
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+   ],
+   "layout": [
+    "volume06-001",
+    "volume06-002",
+    "volume06-003",
+    "volume06-004",
+    "volume06-005",
+    "volume06-006",
+    "volume06-007",
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    "volume06-ending-001",
+    "volume06-ending-002"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 7,
+   "episodes": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+   ],
+   "layout": [
+    "volume07-001",
+    "volume07-002",
+    "volume07-003",
+    "volume07-004",
+    "volume07-005",
+    "volume07-006",
+    "volume07-007",
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    "volume07-ending-001",
+    "volume07-ending-002"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 8,
+   "episodes": [
+    63,
+    64,
+    65,
+    66,
+    67,
+    68
+   ],
+   "layout": [
+    "volume08-001",
+    "volume08-002",
+    "volume08-003",
+    "volume08-004",
+    "volume08-005",
+    "volume08-006",
+    "volume08-007",
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    "volume08-ending-001",
+    "volume08-ending-002"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 9,
+   "episodes": [
+    69,
+    70,
+    71,
+    72,
+    73,
+    74
+   ],
+   "layout": [
+    "volume09-001",
+    "volume09-002",
+    "volume09-003",
+    "volume09-004",
+    "volume09-005",
+    "volume09-006",
+    "volume09-007",
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    "volume09-ending-001",
+    "volume09-ending-002"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 10,
+   "episodes": [
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+   ],
+   "layout": [
+    "volume10-001",
+    "volume10-002",
+    "volume10-003",
+    "volume10-004",
+    "volume10-005",
+    "volume10-006",
+    "volume10-007",
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    "volume10-ending-001"
+   ],
+   "spread_from_cover": true
+  },
+  {
+   "no": 11,
+   "episodes": [
+    81,
+    82
+   ],
+   "layout": [
+    "volume11-001",
+    "volume11-002",
+    "volume11-003",
+    "volume11-004",
+    "volume11-005",
+    81,
+    82
+   ],
+   "spread_from_cover": false
+  }
+ ],
+ "illustrations": {
+  "title": "りんごちゃん イラスト集",
+  "cover": 2,
+  "count": 26,
+  "summary": "全26ページ・見開き12組／単独2ページ",
+  "groups": [
+   [
+    1
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    6,
+    7
+   ],
+   [
+    8,
+    9
+   ],
+   [
+    10,
+    11
+   ],
+   [
+    12,
+    13
+   ],
+   [
+    14,
+    15
+   ],
+   [
+    16,
+    17
+   ],
+   [
+    18,
+    19
+   ],
+   [
+    20,
+    21
+   ],
+   [
+    22,
+    23
+   ],
+   [
+    24
+   ],
+   [
+    25,
+    26
+   ]
+  ]
+ },
+ "related": [
+  {
+   "title": "オーガキングダム",
+   "author": "YUURI・SAKU",
+   "url": "https://saku3298.github.io/ogre-kingdom/",
+   "cover": "ogre-kingdom-cover.jpg",
+   "cover_alt": "オーガキングダムの作品画像",
+   "new_tab": true
+  },
+  {
+   "title": "リカリカイ",
+   "author": "SAKU",
+   "url": "https://saku3298.github.io/rikarikai/",
+   "cover": "rikarikai-cover.jpg",
+   "cover_alt": "リカリカイの作品画像",
+   "new_tab": true
+  }
+ ],
+ "site_link": {
+  "title": "SAKU作品集",
+  "url": "https://saku3298.github.io/saku-works/",
+  "description": "短編マンガをまとめた作品集",
+  "image": "saku-works-cover.jpg",
+  "new_tab": true
+ }
+}
