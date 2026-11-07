@@ -150,8 +150,5 @@ body{-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 .illustration-gallery-link strong{display:block;font-size:17px}
 .illustration-gallery-link p{margin:8px 0;color:#666;font-size:13px;line-height:1.5}
 .illustration-gallery-link span{font-weight:800;color:var(--red)}
-/* ヒーロー（縦長の表紙を横長の枠に収める） */
-.jp-hero{height:clamp(240px,50vw,380px);grid-template-rows:minmax(0,1fr);overflow:hidden}
-.jp-hero img{height:100%;min-height:0;object-position:center top}
 .jp-hero-right{background:radial-gradient(circle at 88% 18%,rgba(239,59,53,.38),transparent 55%),linear-gradient(135deg,#16161a 0%,#241619 58%,#4b1719 100%)}
 .reader-title #reader-title{margin-left:6px;font-size:12px;color:#aaa;white-space:nowrap}
