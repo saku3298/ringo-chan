@@ -1,10 +1,78 @@
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#fff}.shell{max-width:760px;margin:auto}header:not(.reader-head){padding:20px 22px 28px}.hero{display:block;width:min(100%,340px);max-height:420px;object-fit:contain;margin:0 auto 20px}h1{font-size:34px;margin:10px 0}header p{color:#777}.primary{display:inline-block;background:#ef3b35;color:white;padding:14px 24px;border-radius:30px;text-decoration:none;font-weight:800}nav{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #ddd;position:sticky;top:0;background:white}nav button{background:white;border:0;padding:18px 0;font-size:16px;font-weight:800}nav button.active{border-bottom:4px solid #ef3b35;color:#ef3b35}.panel{display:none}.panel.active{display:block}.entry{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px;border-bottom:1px solid #e5e5e5;color:inherit;text-decoration:none}.entry img{width:120px;aspect-ratio:3/4;object-fit:contain;background:#f5f5f5}.entry strong,.entry small,.entry em{display:block}.entry strong{font-size:20px}.entry small{margin:12px 0;color:#777}.entry em{font-style:normal;color:#159bdf;font-weight:bold}.info{padding:22px}.reader-body{background:#181818;color:#fff;min-height:100dvh;display:flex;flex-direction:column}.reader-head{height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;background:#111;font-size:14px}.reader-head a{color:white;text-decoration:none}.reader-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;touch-action:pan-y pinch-zoom;user-select:none}.spread{width:100%;height:calc(100dvh - 112px);display:flex;align-items:center;justify-content:center;gap:0}.page{height:100%;width:auto;max-width:50%;object-fit:contain}.page.single{max-width:100%}.blank{width:min(50%,70vh);height:100%;background:white}.reader-controls{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;gap:10px;background:#111}.reader-controls button{border:1px solid #777;border-radius:8px;background:#292929;color:white;padding:9px 13px}.reader-controls span{font-size:12px;color:#bbb}@media(max-width:700px),(orientation:portrait){.spread{height:calc(100dvh - 112px)}.page{max-width:100%}.blank{display:none}.reader-controls span{display:none}}
-/* Reader behavior and layout aligned with Rikarikai */
+:root{--bg:#0d0d0f;--panel:#18181c;--line:#313139;--text:#f6f6f7;--muted:#b9b9c1;--accent:#f0c85a;--red:#ef3b35}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.top-page{background:#fff;color:#111}.jp-shell{max-width:760px;margin:auto;min-height:100vh;background:#fff}.jp-hero{display:grid;grid-template-columns:1.1fr .9fr;background:#111}.jp-hero img{width:100%;height:100%;object-fit:cover}.jp-hero-right{display:flex;align-items:center;justify-content:flex-start;color:#fff;padding:28px;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.62) 46%,rgba(0,0,0,.08) 100%),url("../images/work/hero-panel.jpg") right center/cover no-repeat}.jp-logo{font-weight:900;font-size:clamp(28px,5.5vw,48px);line-height:1.05;letter-spacing:.04em;white-space:nowrap;text-shadow:0 2px 8px #000,0 0 20px #000}.jp-info{padding:26px 24px 14px}.jp-title{font-size:34px;margin:0 0 4px;font-weight:900}.jp-author{color:#777;font-size:18px;margin-bottom:18px}.jp-actions{display:flex;gap:10px;flex-wrap:wrap}.jp-btn{color:#111;border:1px solid #ddd;border-radius:999px;padding:11px 18px;font-weight:800;background:#fff}.jp-btn.primary{background:var(--red);color:#fff;border-color:var(--red)}
+.jp-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #ddd;position:sticky;top:0;background:#fff;z-index:10}.jp-tab{padding:15px 5px;border:0;background:#fff;font-size:17px;font-weight:800;cursor:pointer}.jp-tab.active{color:var(--red);border-bottom:4px solid var(--red)}.jp-panel{display:none}.jp-panel.active{display:block}.range-bar{display:flex;gap:10px;padding:16px 18px;border-bottom:1px solid #eee}.range-btn{border:0;border-radius:999px;background:var(--red);color:#fff;padding:11px 18px;font-weight:800}.episode-row{display:grid;grid-template-columns:160px 1fr auto;gap:15px;align-items:center;padding:14px 18px;border-bottom:1px solid #e7e7e7}.episode-thumb{width:160px;height:90px;object-fit:cover;background:#eee}.episode-title{font-size:18px;font-weight:900;line-height:1.35}.episode-title span{font-weight:700}.episode-read{color:#18aaf5;border:2px solid #18aaf5;border-radius:999px;padding:8px 13px;font-weight:800}
+.episode-sort-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px 8px;color:#777;font-size:18px}.sort-switch{display:flex;align-items:center;gap:12px;font-weight:800}.sort-btn{appearance:none;border:0;background:transparent;padding:4px 0;color:#888;font:inherit;cursor:pointer}.sort-btn.active{color:var(--red)}
+.comics-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px 10px;color:#777;font-size:18px}.comics-sort{display:flex;gap:14px;font-weight:700}.comics-sort .active{color:var(--red)}.volume-list{display:block}.volume-tile{display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid #e7e7e7}.volume-tile img{width:150px;aspect-ratio:3/4;object-fit:cover}.volume-tile strong,.volume-tile span{display:block}.volume-tile strong{font-size:22px;margin-bottom:8px}.volume-tile span{font-size:16px;color:#777}.volume-tile::after{content:"読む";justify-self:end;color:#18aaf5;border:2px solid #18aaf5;border-radius:999px;padding:9px 18px;font-weight:800}.info-panel{padding:0}.work-intro{padding:28px 26px;border-bottom:1px solid #eee}.work-catch{display:inline-block;background:#111;color:#fff;font-size:24px;font-weight:900;padding:4px 10px;margin-bottom:18px}.work-summary{font-size:20px;line-height:1.7;margin:0 0 18px}.author-profile{display:flex;align-items:center;gap:16px;margin-top:22px}.author-profile img{width:112px;height:112px;object-fit:cover;border-radius:14px;border:1px solid #e5e5e5}.author-profile span,.author-profile strong{display:block}.author-profile span{color:#777;font-size:14px}.author-profile strong{font-size:24px;letter-spacing:.08em}.info-section{padding:28px 26px}.info-section h2{font-size:28px;margin:0 0 18px}.author-work-card{display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:center;padding:16px 0;border-top:1px solid #eee}.author-work-card img{width:130px;height:170px;object-fit:cover;background:#eee}.author-work-title{font-size:22px;font-weight:900}.author-work-author{color:#777;margin-top:6px;font-size:16px}.author-work-label{display:inline-block;background:#111;color:#fff;padding:4px 9px;margin-top:8px;font-weight:800}.author-work-card:hover .author-work-title{text-decoration:underline}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(13,13,15,.91);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.header-inner{max-width:1120px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:900;letter-spacing:.08em}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:500}nav{display:flex;gap:18px;font-size:14px;color:var(--muted)}nav a:hover{color:#fff}.volume-hero{max-width:1000px;margin:auto;padding:42px 20px 28px;display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:42px;align-items:center}.cover-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 20px 55px rgba(0,0,0,.46)}.cover-card img{width:100%}.kicker{font-size:13px;color:var(--accent);font-weight:800;letter-spacing:.15em}h1{font-size:clamp(38px,6vw,72px);line-height:1.05;margin:10px 0 16px}.lead{color:#d8d8dd;font-size:17px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-weight:800}.btn.primary{background:var(--accent);border-color:var(--accent);color:#17130a}.section{max-width:1120px;margin:auto;padding:42px 20px}.section h2{font-size:29px;margin:0 0 18px}.episode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.horizontal-episodes{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}.horizontal-episodes .episode-card{flex:0 0 280px}.episode-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;background:#fff}.card-body{padding:18px}.badge{display:inline-block;font-size:11px;font-weight:900;background:var(--accent);color:#17130a;padding:3px 9px;border-radius:999px;margin-bottom:8px}.card strong{display:block;font-size:18px}footer{border-top:1px solid var(--line);text-align:center;color:#888;font-size:12px;padding:30px 18px 44px}
 .reader-page{background:#111}.reader-bar{position:sticky;top:0;z-index:30;background:rgba(13,13,15,.95);border-bottom:1px solid var(--line)}.reader-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px;padding:4px 10px}.reader-title #context-back,#top{display:inline-flex;align-items:center;min-height:30px;padding:2px 4px;font-size:12px;white-space:nowrap}.small-btn{border:1px solid #444;background:#232327;color:#fff;border-radius:9px;padding:8px 11px;font:inherit;font-size:13px;cursor:pointer}.viewer{position:relative;overflow:hidden;width:100%;max-width:100%;margin:0 auto;background:#111;touch-action:pan-y pinch-zoom}.reader-slide{position:absolute;inset:0 auto auto 0;width:100%;display:none;align-items:flex-start;justify-content:center;background:#111;will-change:transform}.reader-slide.is-active,.reader-slide.is-next,.reader-slide.is-prev{display:flex}.reader-slide.single .manga-page{flex:0 0 100%;width:100%;display:flex;justify-content:center}.reader-slide.single .manga-page img{width:100%;height:auto}.reader-slide.spread{flex-direction:row-reverse;justify-content:center;align-items:flex-start;gap:0}.reader-slide.spread .manga-page{flex:0 1 auto;width:auto;display:flex;margin:0;padding:0;justify-content:center;align-items:flex-start}.reader-slide.spread .manga-page img{height:auto;width:auto;max-width:none;margin:0;padding:0}.reader-slide.spread .manga-page.blank-page{flex:0 0 auto;width:auto;height:100%;max-width:50vw;aspect-ratio:884/1254;background:#fff}.episode-nav{display:flex;justify-content:center;gap:10px;padding:12px 14px}.page-nav{display:flex;justify-content:center;gap:10px;padding:0 14px 18px}.page-nav button{border:1px solid #444;background:#232327;color:#fff;border-radius:10px;padding:10px 16px;font:inherit;cursor:pointer}.counter{text-align:center;color:#999;font-size:13px;padding-bottom:18px}.reader-footer{text-align:center;color:#777;font-size:12px;padding:24px}
 @media(orientation:landscape){.viewer{height:calc(100dvh - 42px);min-height:320px}.reader-slide{height:100%;align-items:flex-start}.reader-slide.spread .manga-page{height:100%;max-width:50vw}.reader-slide.spread .manga-page img{height:100%;width:auto;max-width:50vw;object-fit:contain}}
+@media(max-width:600px){.jp-hero{grid-template-columns:46.5% 53.5%}.jp-hero img{width:100%;height:100%;object-fit:cover}.jp-hero-right{padding:12px}.jp-logo{font-size:26px;letter-spacing:.02em}.jp-info{padding:20px 24px 14px}.jp-title{font-size:34px}.episode-sort-header{padding-left:14px;padding-right:14px;font-size:16px}.sort-switch{gap:9px}.episode-row{grid-template-columns:135px 1fr auto;padding:12px;gap:10px}.episode-thumb{width:135px;height:76px}.episode-title{font-size:16px}.volume-tile{grid-template-columns:105px 1fr auto;padding:14px 12px;gap:12px}.volume-tile img{width:105px}.volume-tile strong{font-size:17px}.volume-tile span{font-size:14px}.volume-tile::after{padding:7px 12px}.work-catch{font-size:20px}.work-summary{font-size:17px}.author-work-card{grid-template-columns:100px 1fr}.author-work-card img{width:100px;height:135px}.author-work-title{font-size:19px}.author-work-author{font-size:14px}.reader-bar-inner{min-height:38px;padding:3px 8px}.reader-title #context-back,#top{font-size:11px}}
+@media(max-width:780px){nav{display:none}.volume-hero{grid-template-columns:1fr;gap:26px}.volume-hero .cover-card{max-width:380px;margin:auto}.horizontal-episodes .episode-card{flex-basis:78vw;max-width:320px}}
 
-.reader-page a{color:#fff;text-decoration:none}.reader-page .viewer img{display:block}.reader-page .reader-slide.single .manga-page img{max-width:100%;object-fit:contain}
+/* ---- 以下は追加分（画面の見た目は変更しません） ---- */
+/* 続きから読む・操作ヒント */
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;max-width:calc(100% - 28px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 10px;padding:10px 14px;background:#232327;color:#fff;border:1px solid #444;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.45);font-size:13px;line-height:1.5;opacity:0;transform:translate(-50%,14px);transition:opacity .25s ease,transform .25s ease}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast.hint{pointer-events:none}
+.toast button{border:1px solid #444;background:#333339;color:#fff;border-radius:999px;padding:6px 14px;font:inherit;cursor:pointer}
+.toast button.primary{background:var(--red);border-color:var(--red);font-weight:800}
+@media(prefers-reduced-motion:reduce){.toast{transition:none}}
+/* 404ページ */
+.nf{padding:72px 24px 48px;text-align:center}
+.nf .nf-code{margin:0;font-size:clamp(72px,22vw,120px);font-weight:900;line-height:1;color:#ddd}
+.nf h1{font-size:24px;margin:10px 0 8px}
+.nf p{color:#777;margin:0 0 26px}
 
+/* ---- 見た目の磨き込み（ジャンププラス風の骨格はそのまま） ---- */
+body{-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid #18aaf5;outline-offset:2px;border-radius:6px}
+@media(min-width:800px){.top-page{background:#f4f4f5}.jp-shell{box-shadow:0 0 0 1px #e8e8ea,0 16px 48px rgba(0,0,0,.07)}}
+/* トップ：ヒーロー */
+.jp-hero{position:relative;border-bottom:4px solid var(--red)}
+.jp-hero-text{display:flex;flex-direction:column;gap:12px}
+.jp-kicker{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.26em;color:rgba(255,255,255,.85);text-shadow:0 1px 6px #000}
+.jp-kicker::before{content:"";flex:none;width:22px;height:3px;border-radius:2px;background:var(--red)}
+.jp-logo{letter-spacing:.06em}
+.jp-title{letter-spacing:.03em}
+.jp-author{margin-bottom:12px}
+.jp-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.jp-tags span{padding:3px 12px;border-radius:999px;background:#f3f3f4;color:#555;font-size:12px;font-weight:800}
+.jp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;box-shadow:0 1px 2px rgba(0,0,0,.06);transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.jp-btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(0,0,0,.14)}
+.jp-btn:active{transform:none;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.jp-btn.primary{box-shadow:0 6px 16px rgba(239,59,53,.32)}
+.jp-btn.primary::before{content:"\25B6";margin-right:.55em;font-size:.7em}
+@media(max-width:600px){.jp-kicker{font-size:10px;letter-spacing:.16em;gap:7px}.jp-kicker::before{width:14px}.jp-hero-text{gap:8px}}
+/* トップ：一覧まわり */
+.jp-tab{transition:color .15s ease}.jp-tab:not(.active):hover{color:var(--red)}
+.episode-row,.volume-tile{transition:background .15s ease}
+.episode-row:hover,.volume-tile:hover{background:#fafafa}
+.episode-thumb{border-radius:6px}
+.episode-read{transition:background .15s ease,color .15s ease}
+.episode-row:hover .episode-read,.volume-tile:hover::after{background:#18aaf5;color:#fff}
+.volume-tile::after{transition:background .15s ease,color .15s ease}
+.volume-tile img{border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.author-work-card{transition:background .15s ease}.author-work-card:hover{background:#fafafa}
+.author-work-card img{border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.info-section h2{font-size:24px;padding-left:12px;border-left:5px solid var(--red);line-height:1.2}
+.work-summary{line-height:1.85}
+.top-page footer{border-top:1px solid #eee;color:#999}
+.top-page footer a{text-decoration:underline;text-underline-offset:3px}
+/* 読書画面：バー・ボタン（バーの高さは変えません） */
+.reader-bar{background:rgba(13,13,15,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.reader-bar .progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:rgba(255,255,255,.1);pointer-events:none}
+.reader-bar #progress-fill{position:absolute;top:0;right:0;height:100%;width:0;background:var(--red);transition:width .25s ease}
+@media(prefers-reduced-motion:reduce){.reader-bar #progress-fill{transition:none}}
+.reader-title #context-back{color:#d6d6dc;transition:color .15s ease}.reader-title #context-back:hover{color:#fff}
+.reader-controls .small-btn{border-radius:999px;background:#2a2a2f;border-color:#46464d;padding:2px 13px;transition:background .15s ease}
+.reader-controls .small-btn:hover{background:#38383f}
+.episode-nav .small-btn{border-radius:999px;padding:9px 20px;transition:background .15s ease}.episode-nav .small-btn:hover{background:#2f2f35}
+.page-nav button{min-height:46px;min-width:140px;border-radius:999px;transition:background .15s ease,transform .1s ease}
+.page-nav button:hover{background:#2f2f35}.page-nav button:active{transform:scale(.97)}
+.counter{font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.reader-footer a{text-decoration:underline;text-underline-offset:3px}
+
+/* ===== りんごちゃんの読書画面（横向き）の補正 ===== */
 /* Landscape: keep artwork below the navigation bar and inside visible viewport. */
 .reader-page{margin:0}
 .reader-page .reader-bar{box-sizing:border-box}
@@ -15,31 +83,6 @@
  .reader-page .reader-slide.spread .manga-page{height:100%;max-height:100%;min-height:0}
  .reader-page .reader-slide.spread .manga-page img{height:100%;max-height:100%;object-fit:contain}
 }
-
-/* Related works in the information tab */
-.related-works{margin-top:30px}.related-works h2{font-size:20px;margin:0 0 12px}.related-work{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid #e5e5e5;text-decoration:none;color:inherit}.related-work img{width:96px;height:120px;object-fit:contain;background:#f5f5f5;flex-shrink:0}.related-work span{display:flex;flex-direction:column;gap:8px}.related-work strong{font-size:18px}.related-work small{color:#666}.related-work em{font-style:normal;color:#159bdf;font-weight:700}@media(max-width:380px){.related-work img{width:80px;height:105px}}
-
-/* Related works: match Rikarikai cards */
-.related-works.info-section{margin-top:30px;padding:0}.related-works.info-section h2{font-size:28px;margin:0 0 18px}.author-work-card{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;align-items:center;padding:16px 0;border-top:1px solid #eee;text-decoration:none;color:inherit}.author-work-card img{width:130px;height:170px;object-fit:cover;background:#eee}.author-work-title{font-size:22px;font-weight:900}.author-work-author{color:#777;margin-top:6px;font-size:16px}.author-work-label{display:inline-block;background:#111;color:#fff;padding:4px 9px;margin-top:8px;font-weight:800}.author-work-card:hover .author-work-title{text-decoration:underline}@media(max-width:600px){.author-work-card{grid-template-columns:100px minmax(0,1fr)}.author-work-card img{width:100px;height:135px}.author-work-title{font-size:19px}.author-work-author{font-size:14px}}
-
-/* Episode list: compact layout consistent with Ogre Kingdom */
-.episode-list{padding:12px 18px 20px}
-.episode-row{display:grid;grid-template-columns:170px minmax(0,1fr) auto;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #e5e5e5;color:#111;text-decoration:none;min-height:128px}
-.episode-row img{width:170px;height:90px;object-fit:contain;object-position:center;background:#fff}
-.episode-row strong{font-size:18px;font-weight:800;line-height:1.5}
-.episode-read{display:inline-flex;align-items:center;justify-content:center;border:2px solid #12a4f4;color:#0797df;background:white;border-radius:999px;font-weight:800;padding:9px 14px;white-space:nowrap}
-.episode-row:hover strong{text-decoration:underline}
-@media(max-width:540px){.episode-list{padding:8px 14px}.episode-row{grid-template-columns:100px minmax(0,1fr) auto;gap:10px;min-height:95px}.episode-row img{width:100px;height:70px}.episode-row strong{font-size:14px}.episode-read{font-size:13px;padding:7px 10px}}
-
-/* Episode navigation for long-running series */
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.secondary-action{display:inline-block;border:1px solid #ddd;border-radius:30px;padding:13px 20px;text-decoration:none;color:#111;font-weight:800;background:#fff}.episode-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 4px 18px;color:#777}.episode-summary div{display:flex;align-items:center;gap:10px}.episode-summary a{color:#888;text-decoration:none;font-weight:800}.episode-summary a:first-child{color:#ef3b35}.latest-episode-action{display:block;margin:16px 0 6px;padding:17px 12px;background:#ef3b35;border-radius:999px;text-align:center;color:#fff;text-decoration:none;font-weight:800}.episode-summary a:hover{text-decoration:underline}@media(max-width:420px){.episode-summary{font-size:13px}.episode-summary div{gap:5px}.hero-actions{gap:8px}.secondary-action{padding:12px 14px}}
-
-/* Volume navigation consistent with episode navigation */
-.volume-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 4px;color:#777}.volume-summary div{display:flex;align-items:center;gap:10px}.volume-summary a{color:#888;text-decoration:none;font-weight:800}.volume-summary a:first-child{color:#ef3b35}.volume-summary a:hover{text-decoration:underline}.latest-volume-action{display:block;margin:16px 0 6px;padding:17px 12px;background:#ef3b35;border-radius:999px;text-align:center;color:#fff;text-decoration:none;font-weight:800}@media(max-width:420px){.volume-summary{font-size:13px}.volume-summary div{gap:5px}}
-
-/* 話・コミックスの昇順／降順切替（オーガキングダム準拠） */
-.episode-summary .sort-btn,.volume-summary .sort-btn{appearance:none;border:0;background:none;padding:4px 0;color:#888;font:inherit;font-weight:800;cursor:pointer}
-.episode-summary .sort-btn.active,.volume-summary .sort-btn.active{color:#ef3b35}
 
 /* Landscape spread: match the working Ogre Kingdom viewer.
    Do not reserve fixed 50% columns: keep pages touching at the gutter. */
@@ -82,45 +125,27 @@
   }
 }
 
-/* ---- 以下は旧 index.html に埋め込まれていたスタイル ---- */
-.episode-range-tabs{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 12px;padding:0 0 14px;border-bottom:1px solid #e8e8e8}
-.episode-range-btn{appearance:none;border:0;border-radius:999px;background:#f0f1f4;color:#171717;padding:12px 19px;font-weight:700;font-size:15px;line-height:1.2;cursor:pointer;min-width:78px}
-.episode-range-btn.active{background:#ef3d38;color:white}
-.episode-range-btn:focus-visible{outline:3px solid #1878df;outline-offset:2px}
+/* ===== りんごちゃん固有の追加分 ===== */
+/* 話の範囲ボタン（1-50 / 51-82） */
+.range-bar{flex-wrap:wrap}
+.range-btn{cursor:pointer;transition:background .15s ease,color .15s ease}
+.range-btn:not(.active){background:#f0f1f4;color:#171717}
+.range-btn:not(.active):hover{background:#e4e5ea}
 .episode-row[hidden]{display:none!important}
-@media(max-width:480px){.episode-range-tabs{gap:8px}.episode-range-btn{padding:10px 15px;min-width:70px}}
-/* コミックス一覧：オーガキングダム同様の2列レイアウト */
-#volumes .entry{display:grid;grid-template-columns:150px minmax(0,1fr);column-gap:18px;row-gap:0;align-items:center;padding:18px 22px;border-bottom:1px solid #e7e7e7;text-decoration:none;color:inherit}
-#volumes .entry>img{grid-column:1;grid-row:1;width:150px;max-width:100%;aspect-ratio:3/4;object-fit:contain;background:#f5f5f5}
-#volumes .entry>span{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;min-width:0;gap:10px}
-#volumes .entry strong{display:block;font-size:22px;font-weight:800;line-height:1.3}
-#volumes .entry small{display:block;margin:0;color:#777;font-size:16px;line-height:1.5}
-#volumes .entry em{display:inline-block;margin-top:4px;padding:9px 18px;border:2px solid #18aaf5;border-radius:999px;color:#18aaf5;font-size:16px;font-style:normal;font-weight:800;line-height:1.2}
-#volumes .volume-summary{padding:18px 22px 10px}
-@media(max-width:600px){#volumes .entry{grid-template-columns:105px minmax(0,1fr);gap:12px;padding:14px 12px}#volumes .entry>img{width:105px}#volumes .entry strong{font-size:17px}#volumes .entry small{font-size:14px}#volumes .entry em{padding:7px 12px;font-size:14px}#volumes .volume-summary{padding-left:14px;padding-right:14px}}
-.illustration-gallery-section{margin:22px 0}
-.illustration-gallery-link{display:flex;align-items:center;gap:16px;padding:14px;border:1px solid #ddd;border-radius:12px;text-decoration:none;color:inherit;max-width:520px;background:#fff}
-.illustration-gallery-link img{width:105px;max-width:32%;aspect-ratio:3/4;object-fit:contain;background:#f5f5f5;border-radius:6px}
+.episode-thumb{object-position:center top}
+/* 「最新話を読む」リンク */
+.latest-link{display:block;margin:10px 18px 4px;padding:12px 18px;border:2px solid var(--red);border-radius:999px;text-align:center;color:var(--red);font-weight:800;transition:background .15s ease,color .15s ease}
+.latest-link:hover{background:var(--red);color:#fff}
+/* 作品情報 */
+.work-meta{margin:0;font-size:18px;line-height:1.9}
+/* イラスト集へのリンク */
+.illustration-gallery-link{display:flex;align-items:center;gap:16px;padding:14px;border:1px solid #e5e5e5;border-radius:12px;color:inherit;max-width:520px;background:#fff;transition:background .15s ease}
+.illustration-gallery-link:hover{background:#fafafa}
+.illustration-gallery-link img{width:105px;max-width:32%;aspect-ratio:3/4;object-fit:cover;background:#f5f5f5;border-radius:6px}
 .illustration-gallery-link strong{display:block;font-size:17px}
-.illustration-gallery-link p{margin:8px 0;color:#666;font-size:13px}
-.illustration-gallery-link span{font-weight:700;color:#a12a2a}
-
-/* ---- 続きから読む・操作ヒントの通知 ---- */
-.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;max-width:calc(100% - 28px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 10px;padding:10px 14px;background:#232327;color:#fff;border:1px solid #444;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.45);font-size:13px;line-height:1.5;opacity:0;transform:translate(-50%,12px);transition:opacity .25s ease,transform .25s ease}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.toast.hint{pointer-events:none}
-.toast button{border:1px solid #444;background:#333339;color:#fff;border-radius:999px;padding:6px 14px;font:inherit;cursor:pointer}
-.toast button.primary{background:#ef3d38;border-color:#ef3d38;font-weight:800}
-@media(prefers-reduced-motion:reduce){.toast{transition:none}}
-
-/* ---- 読書バーの進捗線（右から左へ伸びます） ---- */
-.reader-bar .progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:rgba(255,255,255,.1);pointer-events:none}
-.reader-bar #progress-fill{position:absolute;top:0;right:0;height:100%;width:0;background:#ef3d38;transition:width .25s ease}
-@media(prefers-reduced-motion:reduce){.reader-bar #progress-fill{transition:none}}
-
-/* ---- 404ページ ---- */
-.nf{padding:72px 24px 48px;text-align:center}
-.nf .nf-code{margin:0;font-size:clamp(72px,22vw,120px);font-weight:900;line-height:1;color:#ddd}
-.nf h1{font-size:24px;margin:10px 0 8px}
-.nf p{color:#777;margin:0 0 26px}
-.nf .nf-btn{display:inline-block;background:#ef3d38;color:#fff;border-radius:999px;padding:13px 24px;font-weight:800;text-decoration:none}
+.illustration-gallery-link p{margin:8px 0;color:#666;font-size:13px;line-height:1.5}
+.illustration-gallery-link span{font-weight:800;color:var(--red)}
+/* ヒーロー（縦長の表紙を横長の枠に収める） */
+.jp-hero{height:clamp(240px,50vw,380px);grid-template-rows:minmax(0,1fr);overflow:hidden}
+.jp-hero img{height:100%;min-height:0;object-position:center top}
+.reader-title #reader-title{margin-left:6px;font-size:12px;color:#aaa;white-space:nowrap}

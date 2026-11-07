@@ -3,7 +3,7 @@
 れ。作のオリジナル漫画『りんごちゃん』（全82話・休載中）の公開サイトです（GitHub Pages）。
 公開URL: https://saku3298.github.io/ringo-chan/
 
-画面はジャンププラス風です。縦向きは1ページ表示、横向きは右から左の2ページ見開きで読めます。
+画面はジャンププラス風です（リカリカイと同じデザイン）。縦向きは1ページ表示、横向きは右から左の2ページ見開きで読めます。
 
 ## フォルダ構成
 
@@ -13,7 +13,7 @@
 | `tools/build.py` | `work.json` から全HTMLを生成します |
 | `tools/make_ogp.py` | SNS共有用の画像を `images/ogp/default.jpg` に生成します |
 | `tools/optimize_images.py` | 画像をWebPに変換します（新しく追加した画像にだけ使います） |
-| `css/style.css` | 画面のデザイン（トップ・ビューア・404） |
+| `css/style.css` | 画面のデザイン（トップ・ビューア・404。リカリカイと共通の骨格） |
 | `css/illustrations.css` | イラスト集のデザイン |
 | `js/viewer.js` | ビューア（スワイプ・見開き・続きから読む・進捗バー） |
 | `js/top.js` | トップページ（タブ・話数の範囲と並べ替え） |
@@ -22,6 +22,7 @@
 | `images/thumbs/` | 話一覧 `episodeNN.jpg`・コミックス一覧 `volumeNN.jpg` のサムネイル |
 | `images/illustrations/` | イラスト集 `illustration-001.jpg` … |
 | `images/related/` | 「同じ作者の作品」の表紙 |
+| `images/work/` | トップのヒーロー画像 `hero-panel.jpg` |
 | `images/ogp/` | SNS共有用の画像 |
 | `assets/favicon.svg` | タブのアイコン |
 | `index.html`, `illustrations.html`, `episodes/`, `volumes/`, `404.html`, `reader.html` | **自動生成されるので直接編集しません** |

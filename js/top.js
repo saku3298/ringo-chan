@@ -1,6 +1,6 @@
 /* りんごちゃん トップページ（タブ切り替え・話数の範囲と並べ替え・コミックスの並べ替え） */
 (()=>{
-const tabs=[...document.querySelectorAll('nav button[data-tab]')],panels=[...document.querySelectorAll('.panel')];
+const tabs=[...document.querySelectorAll('.jp-tab')],panels=[...document.querySelectorAll('.jp-panel')];
 function openTab(id,hash=true){if(!panels.some(p=>p.id===id))id='episodes';tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===id));panels.forEach(p=>p.classList.toggle('active',p.id===id));if(hash)history.replaceState(null,'',id==='episodes'?location.pathname:'#'+id)}
 tabs.forEach(t=>t.addEventListener('click',()=>openTab(t.dataset.tab)));
 openTab(location.hash.slice(1)||'episodes',false);
@@ -13,7 +13,7 @@ function applyEpisodeRange(){
 }
 function setOrder(kind,order){
   const section=document.getElementById(kind==='episode'?'episodes':'volumes');
-  const selector=kind==='episode'?'.episode-row[data-episode]':'.entry[data-volume]';
+  const selector=kind==='episode'?'.episode-row[data-episode]':'.volume-tile[data-volume]';
   const attr=kind==='episode'?'episode':'volume';
   const items=Array.from(section.querySelectorAll(selector));
   if(!items.length)return;
