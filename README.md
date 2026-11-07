@@ -22,7 +22,6 @@
 | `images/thumbs/` | 話一覧 `episodeNN.jpg`・コミックス一覧 `volumeNN.jpg` のサムネイル |
 | `images/illustrations/` | イラスト集 `illustration-001.jpg` … |
 | `images/related/` | 「同じ作者の作品」の表紙 |
-| `images/work/` | トップのヒーロー画像 `hero-panel.jpg` |
 | `images/ogp/` | SNS共有用の画像 |
 | `assets/favicon.svg` | タブのアイコン |
 | `index.html`, `illustrations.html`, `episodes/`, `volumes/`, `404.html`, `reader.html` | **自動生成されるので直接編集しません** |
