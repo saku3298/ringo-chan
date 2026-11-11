@@ -132,6 +132,7 @@ def index_page():
                   f'<div><strong>第{n}巻</strong><span>全{pages}ページ・第{v["episodes"][0]}〜{v["episodes"][-1]}話収録</span></div></a>')
     tab = ' target="_blank" rel="noopener"'
     cards = "".join(
+        f'<div class="author-work-card is-static"><img src="images/related/{r["cover"]}" alt="{e(r["cover_alt"])}"><div><div class="author-work-title">{e(r["title"])}</div><div class="author-work-author">作者：{e(r["author"])}</div><span class="author-work-label">{e(r["label"])}</span></div></div>' if not r.get("url") else 
         f'<a class="author-work-card" href="{e(r["url"])}"{tab if r.get("new_tab") else ""}>'
         f'<img src="images/related/{r["cover"]}" alt="{e(r["cover_alt"])}">'
         f'<div><div class="author-work-title">{e(r["title"])}</div><div class="author-work-author">作者：{e(r["author"])}</div>'
