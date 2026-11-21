@@ -211,3 +211,10 @@ a.char-cameo:hover{border-color:#18aaf5;background:#fff}
 
 
 @media(max-width:600px){.catch-br{display:block}}
+
+/* 作者プロフィール */
+.author-profile{display:flex;align-items:center;gap:16px;margin-top:22px}
+.author-profile img{width:112px;height:112px;object-fit:cover;border-radius:14px;border:1px solid #e5e5e5}
+.author-profile span,.author-profile strong{display:block}
+.author-profile span{color:#777;font-size:14px}
+.author-profile strong{font-size:24px;letter-spacing:.08em}
