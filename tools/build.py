@@ -38,6 +38,9 @@ episodes, volumes = data["episodes"], data.get("volumes", [])
 related, site_link, illus = data.get("related", []), data.get("site_link"), data.get("illustrations")
 BASE = site["url"].rstrip("/") + "/"
 TITLE = work["title"]
+TITLE_HTML = "<br>".join(e(x) for x in work["title_break"].split("|")) if work.get("title_break") else e(TITLE)
+KICKER_HTML = f'<div class="jp-kicker">{e(work["kicker"])}</div>' if work.get("kicker") else ""
+CATCH_HTML = ('<p class="jp-catch">' + '<span class="catch-br"></span>'.join(e(x) for x in work["catch_copy"].split("|")) + '</p>') if work.get("catch_copy") else ""
 PER_RANGE = 50
 
 
@@ -107,6 +110,32 @@ def head(title, desc, url, typ, prefix="", extra_css="", theme=False, main_css=T
 '''
 
 
+def characters_html():
+    """登場人物（work.json の characters）。なければ何も出さない。"""
+    chars = data.get("characters") or []
+    if not chars:
+        return ""
+    cards = []
+    for c in chars:
+        role = f'<span class="char-role">{e(c["role"])}</span>' if c.get("role") else ""
+        reading = f'<span class="char-reading">{e(c["reading"])}</span>' if c.get("reading") else ""
+        note = f'<p class="char-note">{e(c["note"])}</p>' if c.get("note") else ""
+        links = "".join(
+            f'<a class="char-cameo" href="{e(x["url"])}" target="_blank" rel="noopener">'
+            + (f'<img src="{img("images/related/" + x["icon"])}" alt="">' if x.get("icon") else "")
+            + f'<span>{e(x["title"])}</span><i aria-hidden="true">›</i></a>'
+            for x in c.get("cameo", []))
+        cameo = f'<span class="char-cameo-head">ほかの作品でも会える</span>{links}' if links else ""
+        cards.append(
+            f'<li class="char-card{" is-main" if c.get("main") else ""}">'
+            f'<img src="{img("images/characters/" + c["image"])}" alt="{e(c["name"])}" loading="lazy">'
+            f'{role}<strong class="char-name">{e(c["name"])}</strong>{reading}'
+            f'<p class="char-desc">{e(c["desc"])}</p>{note}<div class="char-cameos">{cameo}</div></li>')
+    return f'<div class="info-section char-section"><h2>登場人物</h2><ul class="char-list">{"".join(cards)}</ul></div>'
+
+SUMMARY_HTML = f'<p class="work-summary">{e(work["summary"])}</p>' if work.get("summary") else ""
+
+
 def index_page():
     first, last = episodes[0], episodes[-1]
     n_ep, n_vol = len(episodes), len(volumes)
@@ -151,12 +180,12 @@ def index_page():
                       f'<div><strong>{e(illus["title"])}</strong><p>{e(illus["summary"])}</p><span>イラスト集を見る ›</span></div></a></div>')
     footer_link = f' ｜ <a href="{e(site_link["url"])}" target="_blank" rel="noopener">{e(site_link["title"])}</a>' if site_link else ""
     return head(f'{TITLE} | {work["author"]}', site["description"], BASE, "website") + f'''<body class="top-page"><div class="jp-shell">
-<section class="jp-hero"><img src="{cover1}" alt="{e(TITLE)} 第1巻表紙"><div class="jp-hero-right"><div class="jp-hero-text"><div class="jp-kicker">ORIGINAL MANGA</div><div class="jp-logo">{e(TITLE)}</div></div></div></section>
-<section class="jp-info"><h1 class="jp-title">{e(TITLE)}</h1><div class="jp-author">{e(work["author"])}</div><div class="jp-tags"><span>オリジナル漫画</span><span>全{n_ep}話</span><span>{e(work["status"].split("・")[0])}</span></div><div class="jp-actions"><a class="jp-btn primary" href="episodes/episode{first["no"]:02d}.html">第{first["no"]}話から読む</a><a class="jp-btn" href="episodes/episode{last["no"]:02d}.html">最新話から読む</a></div></section>
+<section class="jp-hero"><img src="{cover1}" alt="{e(TITLE)} 第1巻表紙"><div class="jp-hero-right"><div class="jp-hero-text">{KICKER_HTML}<div class="jp-logo">{TITLE_HTML}</div>{CATCH_HTML}</div></div></section>
+<section class="jp-info"><h1 class="jp-title">{TITLE_HTML}</h1><div class="jp-author">{e(work["author"])}</div><div class="jp-tags"><span>オリジナル漫画</span><span>全{n_ep}話</span><span>{e(work["status"].split("・")[0])}</span></div><div class="jp-actions"><a class="jp-btn primary" href="episodes/episode{first["no"]:02d}.html">第{first["no"]}話から読む</a><a class="jp-btn" href="episodes/episode{last["no"]:02d}.html">最新話から読む</a></div></section>
 <nav class="jp-tabs" aria-label="作品メニュー"><button class="jp-tab active" data-tab="episodes">話</button><button class="jp-tab" data-tab="volumes">コミックス</button><button class="jp-tab" data-tab="about">作品情報</button></nav>
 <section id="episodes" class="jp-panel active" data-per-range="{PER_RANGE}"><div class="episode-sort-header"><span>全{n_ep}話</span><div class="sort-switch"><button type="button" class="sort-btn active" data-sort="episode" data-order="asc">1話から</button><span>|</span><button type="button" class="sort-btn" data-sort="episode" data-order="desc">最新話から</button></div></div>{ranges}<a class="latest-link" href="episodes/episode{last["no"]:02d}.html">最新話 第{last["no"]}話を読む</a><div class="episode-list">{rows}</div></section>
 <section id="volumes" class="jp-panel"><div class="comics-header"><span>全{n_vol}巻</span><div class="sort-switch"><button type="button" class="sort-btn active" data-sort="volume" data-order="asc">1巻から</button><span>|</span><button type="button" class="sort-btn" data-sort="volume" data-order="desc">最新巻から</button></div></div><a class="latest-link" href="volumes/volume{volumes[-1]["no"]:02d}.html">最新巻 第{volumes[-1]["no"]}巻を読む</a><div class="volume-list">{tiles}</div></section>
-<section id="about" class="jp-panel info-panel"><div class="work-intro"><div class="work-catch">{e(TITLE)}</div><p class="work-meta">作者：{e(work["author"])}<br>連載状況：{e(work["status"])}</p></div>{illus_html}{related_html}</section>
+<section id="about" class="jp-panel info-panel"><div class="work-intro"><div class="work-catch">{e(TITLE)}</div>{SUMMARY_HTML}<p class="work-meta">作者：{e(work["author"])}<br>連載状況：{e(work["status"])}</p></div>{characters_html()}{illus_html}{related_html}</section>
 </div><footer>{e(site["copyright"])}{footer_link}</footer>
 <script src="js/top.js?v={V_TOP}"></script></body></html>
 '''
