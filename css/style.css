@@ -159,3 +159,18 @@ body{-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 
 /* 新作（リンクなし）の紹介カード：ホバー演出なし */
 .author-work-card.is-static{cursor:default}.author-work-card.is-static:hover{background:transparent}.author-work-card.is-static:hover .author-work-title{text-decoration:none}
+
+/* 同じ作者の作品：横スクロール（古い順。右端を途中で切って、スワイプできることを示す） */
+.work-rail{display:flex;gap:14px;overflow-x:auto;margin:0 -26px;padding:4px 26px 10px;scroll-snap-type:x proximity;scroll-padding-left:26px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.work-rail::-webkit-scrollbar{display:none}
+.rail-card{flex:0 0 152px;scroll-snap-align:start;display:block;color:inherit;text-decoration:none}
+.rail-cover{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:#eee;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+.rail-cover img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.rail-badge{position:absolute;left:0;bottom:0;background:#fff;color:#333;font-size:11px;font-weight:800;line-height:1;padding:5px 8px 5px 7px;border-top-right-radius:4px}
+.rail-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:10px;font-size:15px;font-weight:900;line-height:1.35}
+.rail-year,.rail-author{display:block;margin-top:2px;color:#8a8a8f;font-size:12px}
+.rail-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.rail-tags span{background:#111;color:#fff;font-size:11px;font-weight:800;line-height:1;padding:4px 7px}
+a.rail-card:hover .rail-title{text-decoration:underline}
+.rail-card.is-static{cursor:default}
+@media(min-width:800px){.work-rail{scrollbar-width:thin}.work-rail::-webkit-scrollbar{display:block;height:6px}.work-rail::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}}

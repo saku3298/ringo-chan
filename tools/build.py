@@ -131,18 +131,17 @@ def index_page():
         tiles += (f'<a class="volume-tile" data-volume="{n}" href="volumes/volume{n:02d}.html"><img src="{img(f"images/thumbs/volume{n:02d}")}" alt="{e(TITLE)} 第{n}巻表紙">'
                   f'<div><strong>第{n}巻</strong><span>全{pages}ページ・第{v["episodes"][0]}〜{v["episodes"][-1]}話収録</span></div></a>')
     tab = ' target="_blank" rel="noopener"'
-    cards = "".join(
-        f'<div class="author-work-card is-static"><img src="images/related/{r["cover"]}" alt="{e(r["cover_alt"])}"><div><div class="author-work-title">{e(r["title"])}</div><div class="author-work-author">作者：{e(r["author"])}</div><span class="author-work-label">{e(r["label"])}</span></div></div>' if not r.get("url") else 
-        f'<a class="author-work-card" href="{e(r["url"])}"{tab if r.get("new_tab") else ""}>'
-        f'<img src="images/related/{r["cover"]}" alt="{e(r["cover_alt"])}">'
-        f'<div><div class="author-work-title">{e(r["title"])}</div><div class="author-work-author">作者：{e(r["author"])}</div>'
-        f'<span class="author-work-label">コミックス</span></div></a>' for r in related)
-    if site_link:
-        cards += (f'<a class="author-work-card" href="{e(site_link["url"])}"{tab if site_link.get("new_tab") else ""}>'
-                  f'<img src="images/related/{site_link["image"]}" alt="{e(site_link["title"])}">'
-                  f'<div><div class="author-work-title">{e(site_link["title"])}</div>'
-                  f'<div class="author-work-author">{e(site_link["description"])}</div>'
-                  f'<span class="author-work-label">作品集</span></div></a>')
+    def rail_card(r):
+        badge = f'<span class="rail-badge">{e(r["badge"])}</span>' if r.get("badge") else ""
+        tags = "".join(f"<span>{e(t)}</span>" for t in r.get("tags", []))
+        year = f'<span class="rail-year">{e(r["year"])}</span>' if r.get("year") else ""
+        author = f'<span class="rail-author">作者：{e(r["author"])}</span>' if r.get("author") and r["author"] != work["author"] else ""
+        inner = (f'<span class="rail-cover"><img loading="lazy" src="images/related/{r["cover"]}" alt="{e(r["cover_alt"])}">{badge}</span>'
+                 f'<strong class="rail-title">{e(r["title"])}</strong>{year}{author}<span class="rail-tags">{tags}</span>')
+        if r.get("url"):
+            return f'<a class="rail-card" href="{e(r["url"])}"{tab if r.get("new_tab") else ""}>{inner}</a>'
+        return f'<div class="rail-card is-static">{inner}</div>'
+    cards = '<div class="work-rail">' + "".join(rail_card(r) for r in related) + "</div>"
     related_html = f'<div class="info-section"><h2>同じ作者の作品</h2>{cards}</div>' if cards else ""
     illus_html = ""
     if illus:
